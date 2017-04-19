@@ -1,0 +1,53 @@
+@import "constants";
+
+.input-text {
+  position: relative;
+  display: inline-block;
+  padding-left: 13px;
+  padding-right: 13px;
+
+  min-width: 200px;
+
+  &__input {
+    height: 19px;
+    width: 100%;
+    margin-top: 11px;
+    margin-bottom: 13px;
+    border: none;
+    color: rgba(0, 0, 0, 0.5);
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: all @transition-duration;
+
+    &:focus {
+      margin-top: 23px;
+      margin-bottom: 3px;
+    }
+  }
+
+  &__input:focus ~ &__placeholder {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__placeholder {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    color: rgba(0, 0, 0, 0.5);
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    user-select: none;
+    pointer-events: none;
+    cursor: default;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all @transition-duration;
+  }
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
