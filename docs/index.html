@@ -3,11 +3,25 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
 		<title>Erinithma</title>
 		<link rel="stylesheet" href="bundle.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
 	</head>
 	<body>
 		<button class="button button--blue">Кнопка</button>
+
+		<div class="input-text">
+			<input class="input-text__input" type="text" placeholder="heloo!">
+			<span class="input-text__placeholder">Hint text</span>
+		</div>
+
 	</body>
+	<script>
+		$('.ui.dropdown').dropdown();
+	</script>
 </html>
