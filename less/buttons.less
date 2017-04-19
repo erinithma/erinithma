@@ -1,5 +1,6 @@
 @import "colors";
 @import "constants";
+@import "mixins";
 
 .button {
   display: inline-block;
@@ -7,7 +8,6 @@
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 2px;
 
-  color: rgba(255, 255, 255, 0.9);
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -18,11 +18,29 @@
 
   transition: all @transition-duration;
 
-  &:hover {
-    color: white;
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
   }
 
   &--blue {
-    background-color: @color-blue;
+    .colorizeButton(@color-blue, @button-text-color);
+  }
+
+  &--green {
+    .colorizeButton(@color-green, @button-text-color);
+  }
+
+  &--pink {
+    .colorizeButton(@color-pink, @button-text-color);
+  }
+
+  &--grey {
+    .colorizeButton(@color-grey, @button-text-color);
+  }
+
+  &--disabled {
+    opacity: 0.5;
   }
 }

@@ -1,0 +1,22 @@
+.colorizeButton(@background-color, @text-color) {
+  & {
+    color: fade(@text-color, 90%);
+    background-color: @background-color;
+  }
+
+  &:hover,
+  &:focus {
+    color: @text-color;
+    background-color: mix(@background-color, black, 90%);
+  }
+
+  &:active {
+    color: @text-color;
+    background-color: mix(@background-color, black, 75%);
+  }
+
+  //&--disabled {
+  //  color: fade(@text-color, 90%);
+  //  background-color: fade(@background-color, 50%);
+  //}
+}
