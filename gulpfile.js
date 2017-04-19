@@ -20,8 +20,8 @@ gulp.task('style', function () {
 			'android 4'
 		))
 		.pipe(cleanCSS())
-		.pipe(gulp.dest('./css/'));
-})
+		.pipe(gulp.dest('./docs/'));
+});
 
 gulp.task('watch', ['style'], function () {
 	browserSync.init({
@@ -30,7 +30,9 @@ gulp.task('watch', ['style'], function () {
 			index: 'index.html'
 		}
 	});
-	gulp.watch("./docs/*").on('change', browserSync.reload);
+	gulp.watch('./less/**/*.less', ['style']);
+    gulp.watch('./less/**/*.less').on('change', browserSync.reload);
+	gulp.watch('./docs/*').on('change', browserSync.reload);
 });
 
 gulp.task('default', ['style']);
