@@ -3,7 +3,8 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	autoprefixer = require('gulp-autoprefixer'),
 	cleanCSS = require('gulp-clean-css'),
-	browserSync = require('browser-sync').create();
+	browserSync = require('browser-sync').create(),
+	jsmin = require('gulp-jsmin');
 
 
 gulp.task('style', function () {
@@ -23,6 +24,28 @@ gulp.task('style', function () {
 		.pipe(gulp.dest('./docs/'));
 });
 
+gulp.task('js', function () {
+	return gulp.src('./js/**/*.js')
+		.pipe(concat('bundle.js'))
+		.pipe(jsmin())
+		.pipe(gulp.dest('./docs'));
+});
+
+gulp.task('libs-css', function () {
+	return gulp.src('./libs/css/**/*.css')
+		.pipe(concat('libs.css'))
+        .pipe(cleanCSS())
+		.pipe(gulp.dest('./docs/'));
+});
+
+gulp.task('libs-js', function () {
+    return gulp.src('./libs/js/**/*.js')
+        .pipe(concat('libs.js'))
+        .pipe(gulp.dest('./docs/'));
+});
+
+gulp.task('libs', ['libs-css', 'libs-js']);
+
 gulp.task('watch', ['style'], function () {
 	browserSync.init({
 		server: {
@@ -31,7 +54,6 @@ gulp.task('watch', ['style'], function () {
 		}
 	});
 	gulp.watch('./less/**/*.less', ['style']);
-    gulp.watch('./less/**/*.less').on('change', browserSync.reload);
 	gulp.watch('./docs/*').on('change', browserSync.reload);
 });
 

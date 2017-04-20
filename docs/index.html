@@ -5,23 +5,51 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
 		<title>Erinithma</title>
+
+		<link rel="stylesheet" href="libs.css">
 		<link rel="stylesheet" href="bundle.css">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="libs.js"></script>
 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-	</head>
+		<style>
+			/* debug only */
+			.section {
+				position: relative;
+			}
+
+			.dummy {
+				width: 30%;
+				height: 30%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: white;
+				box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+			}
+		</style>
 	<body>
-		<button class="button button--blue">Кнопка</button>
 
-		<div class="input-text">
-			<input class="input-text__input" type="text" placeholder="heloo!">
-			<span class="input-text__placeholder">Hint text</span>
+		<section id="background"></section>
+		<div id="fullpage">
+			<section class="section">
+				<div class="dummy"></div>
+			</section>
+			<section class="section">
+				<div class="dummy"></div>
+			</section>
+			<section class="section">
+				<div class="dummy"></div>
+			</section>
 		</div>
 
+		<!--<button class="button button&#45;&#45;blue">Кнопка</button>-->
+
+		<!-- <div class="input-text">
+			<input class="input-text__input" type="text" placeholder="heloo!">
+			<span class="input-text__placeholder">Hint text</span>
+		</div> -->
+		<script src="bundle.js"></script>
 	</body>
-	<script>
-		$('.ui.dropdown').dropdown();
-	</script>
 </html>
