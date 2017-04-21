@@ -10,6 +10,7 @@ $(document).ready(function() {
         dragAndMove: 'true',
         onLeave: function (index, nextIndex, direction) {
             document.getElementById("background").style.backgroundColor = colors[nextIndex - 1];
+            $('#info').slick('slickGoTo', nextIndex - 1);
         }
     });
 });

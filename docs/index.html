@@ -25,13 +25,36 @@
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
+				background-color: grey;
+				box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+			}
+
+			.info {
+				width: 200px;
+				height: 350px;
+				position: fixed;
+				top: 50%;
+				left: 70%;
+				z-index: 4;
+				transform: translate(-50%, -50%);
+
 				background-color: white;
 				box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
 			}
 		</style>
 	<body>
-
 		<section id="background"></section>
+		<section class="info" id="info">
+			<article class="info__slide">
+				Привет!
+			</article>
+			<article class="info__slide">
+				Как дела?
+			</article>
+			<article class="info__slide">
+				Мы делаем крутой сайт!
+			</article>
+		</section>
 		<div id="fullpage">
 			<section class="section">
 				<div class="dummy"></div>
