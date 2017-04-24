@@ -46,15 +46,16 @@ gulp.task('libs-js', function () {
 
 gulp.task('libs', ['libs-css', 'libs-js']);
 
-gulp.task('watch', ['style'], function () {
+gulp.task('watch', ['style', 'js'], function () {
 	browserSync.init({
 		server: {
 			baseDir: './docs',
 			index: 'index.html'
 		}
 	});
+	gulp.watch('./js/**/*.js', ['js']);
 	gulp.watch('./less/**/*.less', ['style']);
 	gulp.watch('./docs/*').on('change', browserSync.reload);
 });
 
-gulp.task('default', ['style']);
+gulp.task('default', ['style', 'js']);

@@ -12,7 +12,7 @@ $(document).ready(function() {
     $('*[data-info="begin"]').append(info);
 
     var info_begin = $('.section').index($('*[data-info="begin"]')) + 1; //the beginning of the showcase
-    var info_end = $('.section').index($('*[data-info="end"]')) + 1;   //the end
+    var info_end = $('.section').index($('*[data-info="end"]')) + 1; //the end
 
     $('#fullpage').fullpage({
         dragAndMove: 'true',
