@@ -1,3 +1,5 @@
+@import "colors";
+
 .colorizeButton(@background-color, @text-color) {
   & {
     color: fade(@text-color, 90%);
@@ -19,4 +21,46 @@
   //  color: fade(@text-color, 90%);
   //  background-color: fade(@background-color, 50%);
   //}
+}
+
+.addColorModifiers() {
+  &--blue {
+    color: @color-blue;
+  }
+
+  &--yellow {
+    color: @color-yellow;
+  }
+
+  &--orange {
+    color: @color-orange;
+  }
+
+  &--silver {
+    color: @color-silver;
+  }
+
+  &--green {
+    color: @color-green;
+  }
+
+  &--pink {
+    color: @color-pink;
+  }
+
+  &--grey {
+    color: @color-grey;
+  }
+
+  &--brown {
+    color: @color-brown;
+  }
+
+  &--black {
+    color: black;
+  }
+
+  &--white {
+    color: white;
+  }
 }

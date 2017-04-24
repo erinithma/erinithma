@@ -1,0 +1,60 @@
+@import "colors";
+@import "mixins";
+
+@sans-serif: "Roboto", "Arial", sans-serif;
+
+.heading {
+  font-size: 24px;
+  font-family: @sans-serif;
+  line-height: 1;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &--big {
+    font-weight: 900;
+  }
+
+  &--small {
+    font-size: 14px;
+    font-weight: 900;
+  }
+
+  &--lined {
+
+    position: relative;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      bottom: -7px;
+      left: 0;
+      width: 47px;
+      height: 2px;
+      background-color: white;
+    }
+  }
+
+  .addColorModifiers();
+
+}
+
+.text {
+  font-size: 14px;
+  font-family: @sans-serif;
+  line-height: 1.25;
+  font-weight: 400;
+  color: @color-text;
+
+  &--light {
+    color: @color-text-light;
+  }
+
+  &--big {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .addColorModifiers();
+
+}
