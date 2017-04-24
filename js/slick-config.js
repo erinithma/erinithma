@@ -3,7 +3,8 @@
 $('#info').slick({
     dots: true,
     infinite: false,
-    arrows: false
+    arrows: false,
+    fade: true
 });
 
 $('#info').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
