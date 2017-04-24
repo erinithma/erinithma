@@ -39,7 +39,7 @@ $(document).ready(function() {
             // fix the `info` position when it's need to stay at it's place
             if (index >= info_begin && index <= info_end) {
                 $('#info').remove();
-                $('body').append(info);
+                $('main').append(info);
             }
         }
     });
