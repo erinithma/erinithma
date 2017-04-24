@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&amp;subset=cyrillic" rel="stylesheet">
 		<title>Erinithma</title>
 
 		<link rel="stylesheet" href="libs.css">
@@ -14,10 +14,6 @@
 
 		<style>
 			/* debug only */
-			.section {
-				position: relative;
-			}
-
 			.dummy {
 				width: 30%;
 				height: 30%;
@@ -27,30 +23,6 @@
 				transform: translate(-50%, -50%);
 				background-color: grey;
 				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.info {
-				width: 300px;
-				height: 350px;
-				padding: 30px;
-				position: absolute;
-				top: 50%;
-				left: 70%;
-				z-index: 4;
-				transform: translate(-50%, -50%);
-
-				background-color: white;
-				box-shadow: 0 2px 4px rgba(81, 81, 81, 0.5);
-			}
-
-			.header {
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 4;
-				width: 100%;
-				padding: 0 25px;
-				box-sizing: border-box;
 			}
 		</style>
 	<body>
@@ -81,11 +53,47 @@
 
 			<div id="fullpage">
 				<section class="section">
-					<div style="display: flex; height: 100%; width: 100%;">
-						<div style="width: 60%; background-color: #00a5d0;"></div>
-						<div style="width: 40%;">
-							<div style="height: 50%; background-color: yellow;"></div>
-							<div style="height: 50%; background-color: red;"></div>
+					<div class="justifier">
+						<a class="block block--blue" href="#" style="width: 66%;">
+							<div class="block__picture-container">
+								<img class="block__picture" src="img/1.png" width="436" height="282" alt="Portfolio">
+							</div>
+							<footer class="block__footer">
+								<h2 class="heading heading--small heading--lined heading--white">
+									Портфолио
+								</h2>
+								<p class="text text--big text--white">
+									Мы создаем классные, адаптивные и функциональные сайты
+								</p>
+							</footer>
+						</a>
+						<div style="width: 34%;">
+							<a class="block block--small block--yellow" href="#">
+								<div class="block__picture-container">
+									<img class="block__picture" src="img/2.png" width="256" height="183" alt="About us">
+								</div>
+								<footer class="block__footer">
+									<h2 class="heading heading--small heading--lined heading--white">
+										О студии
+									</h2>
+									<p class="text text--white">
+										Команда, навыки, опыт, философия и возможности в веб-разработке
+									</p>
+								</footer>
+							</a>
+							<a class="block block--small block--silver" href="#">
+								<div class="block__picture-container">
+									<img class="block__picture" src="img/3.png" width="236" height="162" alt="Pricing">
+								</div>
+								<footer class="block__footer">
+									<h2 class="heading heading--small heading--lined heading--white">
+										Стоимость и сроки
+									</h2>
+									<p class="text text--white">
+										Средние цены и время разработки проектов
+									</p>
+								</footer>
+							</a>
 						</div>
 					</div>
 				</section>
