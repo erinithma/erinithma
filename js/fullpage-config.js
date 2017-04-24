@@ -10,9 +10,14 @@ $(document).ready(function() {
     var info = $('#info');
     $('#info').remove();
     $('*[data-info="begin"]').append(info);
-
     var info_begin = $('.section').index($('*[data-info="begin"]')) + 1; //the beginning of the showcase
     var info_end = $('.section').index($('*[data-info="end"]')) + 1; //the end
+
+    var header = $('.header');
+    $('.header').remove();
+    $('*[data-header="begin"]').append(header);
+    var header_begin = $('.section').index($('*[data-header="begin"]')) + 1;
+    var header_end = $('.section').index($('*[data-header="end"]')) + 1;
 
     $('#fullpage').fullpage({
         dragAndMove: 'true',
@@ -34,12 +39,25 @@ $(document).ready(function() {
                 $('*[data-info="end"]').append(info);
             }
 
+            if (nextIndex < header_begin) {
+                $('.header').remove();
+                $('*[data-header="begin"]').append(header);
+            } else if (nextIndex > header_end) {
+                $('.header').remove();
+                $('*[data-header="end"]').append(header);
+            }
+
         },
         afterLoad: function (anchorLink, index) {
             // fix the `info` position when it's need to stay at it's place
             if (index >= info_begin && index <= info_end) {
                 $('#info').remove();
                 $('main').append(info);
+            }
+
+            if (index >= header_begin && index <= header_end) {
+                $('.header').remove();
+                $('main').append(header);
             }
         }
     });

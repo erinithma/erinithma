@@ -42,10 +42,22 @@
 				background-color: white;
 				box-shadow: 0 2px 4px rgba(81, 81, 81, 0.5);
 			}
+
+			.header {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 4;
+				width: 100%;
+				padding: 0 25px;
+				box-sizing: border-box;
+			}
 		</style>
 	<body>
-		<header>
-
+		<header class="header">
+			<h2 class="heading heading--white">
+				Under construction
+			</h2>
 		</header>
 		<main>
 			<section id="background"></section>
@@ -77,7 +89,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="section" data-info="begin">
+				<section class="section" data-info="begin" data-header="begin">
 					<div class="dummy"></div>
 				</section>
 				<section class="section">
@@ -89,7 +101,7 @@
 				<section class="section">
 					<div class="dummy"></div>
 				</section>
-				<section class="section">
+				<section class="section" data-header="end">
 					<div class="dummy"></div>
 				</section>
 			</div>
