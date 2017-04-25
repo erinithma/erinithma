@@ -18,15 +18,21 @@
 .info {
   width: 300px;
   height: 350px;
-  padding: 30px;
   position: absolute;
   top: 50%;
   left: 70%;
   z-index: 4;
   transform: translate(-50%, -50%);
 
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(81, 81, 81, 0.5);
+
+  &__slide {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(81, 81, 81, 0.5);
+  }
+
+  &__wrapper {
+    padding: 30px;
+  }
 }
 
 .justifier {

@@ -3,6 +3,16 @@
 var colors = ['#40a9fd', '#20ca8c', '#f24b6b', '#fd9444'];
 
 $(document).ready(function() {
+    // initialise slider
+    var mySwiper = new Swiper ('#info', {
+        direction: 'vertical',
+        effect: 'cube',
+        speed: 600
+    });
+
+    mySwiper.disableMousewheelControl();
+    mySwiper.disableKeyboardControl();
+    mySwiper.disableTouchControl();
 
     document.getElementById("background").style.backgroundColor = colors[0];
 
@@ -26,7 +36,7 @@ $(document).ready(function() {
 
             // scroll `info` according to the showcase slide where we are going
             if (nextIndex >= info_begin && nextIndex <= info_end) {
-                $('#info').slick('slickGoTo', nextIndex - info_begin);
+                mySwiper.slideTo(nextIndex - info_begin);
             }
 
             // move `info` to the first or to the last showcase slide,
