@@ -1,6 +1,6 @@
 'use strict';
 
-var colors = ['#40a9fd', '#20ca8c', '#f24b6b', '#fd9444'];
+var colors = ['#20ca8c', '#6d4c41', '#fd9444', '#fd9444'];
 
 $(document).ready(function() {
     // initialise slider
@@ -10,7 +10,10 @@ $(document).ready(function() {
         speed: 600,
         pagination: '.swiper-pagination',
         paginationHide: false,
-        paginationClickable: true
+        paginationClickable: true,
+        onSlideChangeStart: function (mySwiper) {
+            $('#fullpage').fullpage.moveTo(mySwiper.activeIndex + info_begin);
+        }
     });
 
     mySwiper.disableMousewheelControl();
