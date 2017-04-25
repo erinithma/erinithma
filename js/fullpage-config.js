@@ -7,7 +7,10 @@ $(document).ready(function() {
     var mySwiper = new Swiper ('#info', {
         direction: 'vertical',
         effect: 'cube',
-        speed: 600
+        speed: 600,
+        pagination: '.swiper-pagination',
+        paginationHide: false,
+        paginationClickable: true
     });
 
     mySwiper.disableMousewheelControl();
