@@ -1,0 +1,16 @@
+.justifier {
+  display: flex;
+  //flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+.pillbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  > * + * {
+  	margin-left: 33px;
+  }
+}

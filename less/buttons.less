@@ -4,16 +4,18 @@
 
 .button {
   display: inline-block;
-  padding: 12px 36px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 2px;
+  padding: 8px 24px;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
 
   font-family: "Roboto", "Arial", sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  // text-transform: uppercase;
 
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 
   transition: all @transition-duration;
@@ -24,23 +26,32 @@
     outline: none;
   }
 
-  &--blue {
-    .colorizeButton(@color-blue, @button-text-color);
+  &:hover {
+    background-color: rgba(255, 255, 255, .2);
   }
 
-  &--green {
-    .colorizeButton(@color-green, @button-text-color);
+  &:active {
+    color: rgba(255, 255, 255, .8);
+    border-color: rgba(255, 255, 255, .2);
   }
 
-  &--pink {
-    .colorizeButton(@color-pink, @button-text-color);
-  }
+  // &--blue {
+  //   .colorizeButton(@color-blue, @button-text-color);
+  // }
 
-  &--grey {
-    .colorizeButton(@color-grey, @button-text-color);
-  }
+  // &--green {
+  //   .colorizeButton(@color-green, @button-text-color);
+  // }
 
-  &--disabled {
-    opacity: 0.5;
-  }
+  // &--pink {
+  //   .colorizeButton(@color-pink, @button-text-color);
+  // }
+
+  // &--grey {
+  //   .colorizeButton(@color-grey, @button-text-color);
+  // }
+
+  // &--disabled {
+  //   opacity: 0.5;
+  // }
 }
