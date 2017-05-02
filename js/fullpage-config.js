@@ -1,6 +1,6 @@
 'use strict';
 
-var colors = ['#20ca8c', '#6d4c41', '#fd9444', '#fd9444'];
+var colors = ['#20ca8c', '#6d4c41', '#fd9444', '#ffb300', '#13aad1'];
 
 $(document).ready(function() {
     // initialise slider

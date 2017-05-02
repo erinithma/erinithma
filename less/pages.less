@@ -1,6 +1,24 @@
 @import "colors";
 @import "gradients";
 
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  padding: 25px 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  margin: 0;
+}
+
 .block {
   @block-padding: 20px;
 
@@ -53,5 +71,82 @@
     bottom: @block-padding;
     left: @block-padding;
     right: @block-padding;
+  }
+}
+
+
+.promo {
+  position: absolute;
+
+  padding: 31px 25px;
+  margin-top: 150px;
+
+  box-shadow: 0 2px 4px rgba(81, 81, 81, 0.5);
+  box-sizing: border-box;
+
+  &-container {
+    padding-top: 120px;
+  }
+
+  &__picture {
+
+    max-width: 100%;
+    height: auto;
+
+    &-wrapper {
+      position: relative;
+
+      margin-right: 22px;
+      margin-bottom: 22px;
+      float: left;
+
+      > .heading {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &-1 {
+    top: 80px;
+    left: 89px;
+    width: 820px;
+    background-color: #b68424;
+
+    > .text {
+      width: 620px;
+    }
+  }
+
+  &-2 {
+    top: 260px;
+    left: 150px;
+    width: 820px;
+    background-color: white;
+
+    > .text {
+      width: 555px;
+    }
+  }
+
+  &-3 {
+    top: 125px;
+    right: 230px;
+    width: 300px;
+    background-color: #c7a156;
+
+    > .heading {
+      margin-top: 37px;
+    }
+
+    > .text {
+      padding-top: 50px;
+    }
   }
 }
