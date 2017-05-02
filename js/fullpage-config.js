@@ -1,6 +1,6 @@
 'use strict';
 
-var colors = ['#20ca8c', '#6d4c41', '#fd9444', '#ffb300', '#13aad1'];
+var colors = ['#20ca8c', '#6d4c41', '#fd9444', '#ffb300', '#13aad1', '#b0bec5'];
 
 $(document).ready(function() {
     // initialise slider
@@ -21,6 +21,9 @@ $(document).ready(function() {
     mySwiper.disableTouchControl();
 
     document.getElementById("background").style.backgroundColor = colors[0];
+
+    // move footer to the end of the slider
+    $('*[data-footer="here"]').replaceWith($('.footer'));
 
     // move `info` from body to the first showcase slide
     var info = $('#info');
