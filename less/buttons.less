@@ -44,6 +44,16 @@
     }
   }
 
+  &--blue {
+    color: white;
+    border-color: @color-blue;
+    background-color: @color-blue;
+
+    &:active {
+      opacity: .8;
+    }
+  }
+
   &--brown {
     color: @color-brown;
     border-color: @color-brown;
@@ -70,5 +80,21 @@
     &:active {
       opacity: .8;
     }
+  }
+
+  &--wide {
+    width: 100%;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--light {
+    font-weight: 400;
+  }
+
+  &--tall {
+    line-height: 1.5;
   }
 }
