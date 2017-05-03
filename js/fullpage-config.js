@@ -39,7 +39,8 @@ $(document).ready(function() {
     var header_end = $('.section').index($('*[data-header="end"]')) + 1;
 
     $('#fullpage').fullpage({
-        dragAndMove: 'true',
+        dragAndMove: true,
+        scrollOverflow: false,
         onLeave: function (index, nextIndex, direction) {
             document.getElementById("background").style.backgroundColor = colors[nextIndex - 2];
 
@@ -78,6 +79,11 @@ $(document).ready(function() {
                 $('.header').remove();
                 $('main').append(header);
             }
+
+            // play video on page
+            $('video').each(function (index, element) {
+                element.play();
+            });
         }
     });
 });
