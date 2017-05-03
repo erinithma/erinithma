@@ -50,6 +50,10 @@
 }
 
 .table {
+
+  @wide-cell-width: 120px;
+  @tall-row-height: 60px;
+
   border-spacing: 0;
   border-collapse: collapse;
   text-align: center;
@@ -60,6 +64,10 @@
     background-color: @color-light-blue;
   }
 
+  &__tr--tall &__td {
+    height: @tall-row-height;
+  }
+
   &__th {
     padding: 18px;
     font-size: 18px;
@@ -68,6 +76,10 @@
     &--lined {
       border-left: 1px solid white;
       border-right: 1px solid white;
+    }
+
+    &--wide {
+      width: @wide-cell-width;
     }
   }
 
@@ -88,6 +100,10 @@
     &--borderless {
       border-left: none !important;
       border-right: none !important;
+    }
+
+    &--wide {
+      width: @wide-cell-width;
     }
   }
 
