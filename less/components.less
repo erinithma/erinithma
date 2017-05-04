@@ -1,6 +1,7 @@
 @import "colors";
 @import "gradients";
 @import "constants";
+@import "mixins";
 
 .container {
   position: relative;
@@ -115,4 +116,37 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   object-fit: fill;
   overflow: hidden;
+}
+
+.accordion {
+
+  display: flex;
+  height: 100%;
+
+  &__strip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    flex-grow: 2;
+    transition: all @transition-duration;
+
+    .addBackgroundColorModifiers();
+
+    &:hover {
+      flex-grow: 4;
+    }
+  }
+
+  &__strip > &__text {
+    visibility: hidden;
+    opacity: 0;
+    transition: all @transition-duration;
+  }
+
+  &__strip:hover > &__text {
+    visibility: visible;
+    opacity: 1;
+  }
 }
