@@ -1,5 +1,5 @@
 @import "colors";
-@import "gradients";
+@import "constants";
 
 .header {
   position: absolute;
@@ -32,27 +32,29 @@
 
   box-sizing: border-box;
 
+  transition: all @transition-duration;
+
   &--small {
     height: 50%;
     min-width: 261px;
   }
 
   &--blue {
-    background: @gradient-blue;
+    background: @color-blue;
   }
 
   &--yellow {
-    background-color: @color-yellow;
+    background: @color-yellow;
   }
 
   &--silver {
-    background-color: @color-silver;
+    background: @color-silver;
   }
 
   &__picture {
     max-width: 100%;
     height: auto;
-    transition: all .3s;
+    transition: all @transition-duration;
 
     &-container {
       position: absolute;
@@ -64,6 +66,7 @@
 
   &:hover &__picture {
     transform: scale(1.1);
+    filter: drop-shadow(0 0 100px rgba(255, 255, 255, .4));
   }
 
   &__footer {
