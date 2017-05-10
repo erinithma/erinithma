@@ -1,4 +1,5 @@
 @import "colors";
+@import "gradients";
 @import "constants";
 
 .header {
@@ -51,7 +52,21 @@
     background: @color-silver;
   }
 
+  &__gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: @gradient-emphasis;
+
+    opacity: 0;
+    transition: opacity @transition-duration;
+  }
+
   &__picture {
+
+    position: relative;
     max-width: 100%;
     height: auto;
     transition: all @transition-duration;
@@ -66,7 +81,10 @@
 
   &:hover &__picture {
     transform: scale(1.1);
-    filter: drop-shadow(0 0 100px rgba(255, 255, 255, .4));
+  }
+
+  &:hover &__gradient {
+    opacity: 1;
   }
 
   &__footer {
