@@ -81,9 +81,11 @@ $(document).ready(function() {
             }
 
             // play video on page
-            $('video').each(function (index, element) {
-                element.play();
-            });
+            setTimeout(function () {
+                $('video').each(function (index, element) {
+                    element.play();
+                });
+            }, 200);
         }
     });
 });
