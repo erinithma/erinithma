@@ -123,45 +123,13 @@
   height: auto;
 }
 
-@keyframes shrink-text {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0;
-  }
-
-  49% {
-    width: 380px;
-  }
-
-  50% {
-    width: 380px;
-    height: auto;
-  }
-
-  51% {
-    width: 380px;
-    height: auto;
-    opacity: 0;
-  }
-
-  100% {
-    width: 380px;
-    height: auto;
-    opacity: 1;
-  }
-}
-
 .accordion {
 
   display: flex;
   height: 100%;
 
   &__strip {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    position: relative;
 
     flex-grow: 2;
     transition: all @transition-duration;
@@ -169,37 +137,60 @@
     .addBackgroundColorModifiers();
 
     &:hover {
-      flex-grow: 4;
+      flex-grow: 12;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 22px;
+      left: 50%;
+      transform: translate(-50%, 0);
+
+      width: 23px;
+      height: 23px;
+      background: url("img/accordion/star.svg") no-repeat;
     }
   }
 
-  &__text {
-    max-width: 380px;
+  &__picture {
+
+    margin: 30px 0;
+
+    &-container {
+      position: relative;
+      width: 100%;
+      height: 50%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    }
   }
 
-  &__strip > &__text {
-    // display: none;
+  &__strip &__text {
 
-    width: 0;
-    height: 0;
-    // visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 380px;
+    transform: translate(-50%, 0);
+
+    visibility: hidden;
     opacity: 0;
-    // transition: all @transition-duration;
-    animation-direction: reverse;
+    transition: all @transition-duration;
 
+    &-container {
+      position: relative;
+      width: 100%;
+      height: 50%;
+    }
   }
 
-  &__strip:hover > &__text {
-    // display: block;
-
-    // width: 380px;
-    // height: auto;
-    // visibility: visible;
-    // opacity: 1;
-
-    animation-name: shrink-text;
-    animation-duration: .6s;
-    animation-fill-mode: forwards;
-    animation-direction: normal;
+  &__strip:hover &__text {
+    visibility: visible;
+    opacity: 1;
   }
 }
