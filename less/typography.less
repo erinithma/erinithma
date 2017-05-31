@@ -1,8 +1,10 @@
 @import "colors";
 @import "mixins";
 
-@sans-serif: "Roboto", "Arial", sans-serif;
-
+@sans-serif: "Exo 2", "Arial", sans-serif;
+body {
+  font-family: @sans-serif;
+}
 .heading {
   margin-top: 0;
   margin-bottom: 5px;
@@ -21,7 +23,7 @@
 
   &--small {
     font-size: 14px;
-    font-weight: 900;
+    font-weight: 700;
   }
 
   &--light {
@@ -32,12 +34,12 @@
   &--lined {
 
     position: relative;
-
+    margin-bottom: 25px;
     &:after {
       content: '';
       display: inline-block;
       position: absolute;
-      bottom: -7px;
+      bottom: -15px;
       left: 0;
       width: 47px;
       height: 2px;
