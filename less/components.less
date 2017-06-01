@@ -66,13 +66,21 @@
     &--lined {
       border-left: 1px solid white;
       border-right: 1px solid white;
+      &:last-child {
+        border-right: none;
+      }
     }
-
+    
     &--wide {
       width: @wide-cell-width;
     }
   }
-
+  &__tr {
+    font-size: 14px;
+    &:first-child,&:last-child {
+      font-size: 18px;
+    }
+  }
   &__td {
     padding: 18px;
     border: none;
@@ -83,6 +91,9 @@
     &--lined {
       border-left: 1px solid white;
       border-right: 1px solid white;
+      &:last-child {
+        border-right: none;
+      }
     }
 
     &--dark {
