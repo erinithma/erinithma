@@ -131,11 +131,17 @@
     border-right: none;
   }
 }
+.table.center {
+  transform:translate(-40%,-50%);
+}
 
 .video {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   object-fit: fill;
   overflow: hidden;
+}
+.video.center {
+  transform: translate(-59%,-50%);
 }
 
 .picture {
@@ -150,11 +156,10 @@
   
   &__inner {
     height: 100%;
-    &:hover {
-      background: @gradient-accordion;  
-    }
   }
   &__strip {
+    height: 100%;
+
     position: relative;
 
     flex-grow: 2;
