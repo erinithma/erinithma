@@ -1,8 +1,11 @@
 @import "colors";
 @import "mixins";
+@import "constants";
 
-@sans-serif: "Roboto", "Arial", sans-serif;
-
+@sans-serif: "Exo 2", "Arial", sans-serif;
+body {
+  font-family: @sans-serif;
+}
 .heading {
   margin-top: 0;
   margin-bottom: 5px;
@@ -10,38 +13,48 @@
   font-family: @sans-serif;
   line-height: 1;
   font-weight: 500;
-
-  &--uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
+  
+  &--notransform {
+    text-transform: none;
   }
-
+  
   &--big {
     font-weight: 900;
   }
 
   &--small {
     font-size: 14px;
-    font-weight: 900;
+    font-weight: 700;
   }
 
   &--light {
     font-size: 16px;
     font-weight: 500;
   }
-
+  
+  &--logo {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+  }
+  
   &--lined {
-
+    display: inline-block;
     position: relative;
-
+    margin-bottom: 10px;
+    
     &:after {
       content: '';
       display: inline-block;
       position: absolute;
-      bottom: -7px;
+      bottom: -15px;
       left: 0;
-      width: 47px;
+      width: 25px;
       height: 2px;
       background-color: white;
+      transition: all @transition-duration;
     }
   }
 
