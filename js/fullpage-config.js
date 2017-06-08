@@ -67,8 +67,14 @@ $(document).ready(function() {
                 $('*[data-header="end"]').append(header);
             }
 
+            $('video[data-index="'+index+'"]').each(function (index, element) {
+                element.pause();
+            });
+            console.log('leaved index: '+index);
+
         },
         afterLoad: function (anchorLink, index) {
+            console.log('loaded index: '+index);
             // fix the `info` position when it's need to stay at it's place
             if (index >= info_begin && index <= info_end) {
                 $('#info').remove();
@@ -81,11 +87,14 @@ $(document).ready(function() {
             }
 
             // play video on page
-            setTimeout(function () {
+            /*setTimeout(function () {
                 $('video').each(function (index, element) {
                     element.play();
                 });
-            }, 200);
+            }, 200);*/
+            $('video[data-index="'+index+'"]').each(function (index, element) {
+                element.play();
+            });
         }
     });
 });
