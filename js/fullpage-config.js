@@ -32,15 +32,13 @@ $(document).ready(function() {
     var info_begin = $('.section').index($('*[data-info="begin"]')) + 1; //the beginning of the showcase
     var info_end = $('.section').index($('*[data-info="end"]')) + 1; //the end
 
-    var header = $('.header');
-    $('.header').remove();
-    $('*[data-header="begin"]').append(header);
-    var header_begin = $('.section').index($('*[data-header="begin"]')) + 1;
-    var header_end = $('.section').index($('*[data-header="end"]')) + 1;
-
     $('#fullpage').fullpage({
         dragAndMove: true,
         scrollOverflow: false,
+        anchors:['','portfolio','','', 'about-us', 'prices'],
+        lockAnchors: false,
+        animateAnchor: true,
+        menu: '#header',
         onLeave: function (index, nextIndex, direction) {
             document.getElementById("background").style.backgroundColor = colors[nextIndex - 2];
 
@@ -70,11 +68,8 @@ $(document).ready(function() {
             $('video[data-index="'+index+'"]').each(function (index, element) {
                 element.pause();
             });
-            console.log('leaved index: '+index);
-
         },
         afterLoad: function (anchorLink, index) {
-            console.log('loaded index: '+index);
             // fix the `info` position when it's need to stay at it's place
             if (index >= info_begin && index <= info_end) {
                 $('#info').remove();
@@ -87,14 +82,34 @@ $(document).ready(function() {
             }
 
             // play video on page
-            /*setTimeout(function () {
-                $('video').each(function (index, element) {
-                    element.play();
-                });
-            }, 200);*/
             $('video[data-index="'+index+'"]').each(function (index, element) {
                 element.play();
             });
         }
     });
+
+    var header = $('.header');
+    $('.header').remove();
+    $('*[data-header="begin"]').append(header);
+    var header_begin = $('.section').index($('*[data-header="begin"]')) + 1;
+    var header_end = $('.section').index($('*[data-header="end"]')) + 1;
+    
+
+    //$('#request').click(function(e){
+    
+
+    $('.popup__button').click(function(e){
+        $('.popup').hide();
+        $('.popup__bg').hide();
+        return false;
+    });
+
+    console.log('initialized');
+
 });
+function showPopup() {
+    console.log('request clicked');
+    $('.popup').show();
+    $('.popup__bg').show();
+    $('.popup__bg').css('display','flex');
+}
