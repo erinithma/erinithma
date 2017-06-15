@@ -13,17 +13,53 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="./desktop/libs.js"></script>
 	<body>
-		<header class="header">
+		<div class="popup__bg">
+		<div class="popup popup--request">
+			<form action="#">
+				<h2 class="popup__title">Оставьте заявку</h2>
+				<p class="text popup__text">Мы свяжемся с вами, чтобы узнать детали вашего проекта</p>
+				
+				<div class="check-group">
+					<div class="check-group__check">
+						<input name="landing" id="landing" type="checkbox">
+						<label for="landing">Landing Page</label>
+					</div>
+					<div class="check-group__check">
+						<input name="store" id="store" type="checkbox">
+						<label for="store">Интернет - магазин</label>
+					</div>
+					<div class="check-group__check">
+						<input name="corp" id="corp" type="checkbox">
+						<label for="corp">Корпоративный сайт</label>
+					</div>
+				</div>
+				<div class="row">
+					<input type="text" class="col input-text input-text--grey" placeholder="Ваше имя" name="name">
+					<input type="text" class="col input-text input-text--grey" placeholder="Телефон" name="phone">	
+				</div>
+				<div class="row">
+					<input type="text" class="col input-text input-text--grey" placeholder="Ваш сайт (если есть)" name="website">
+					<input type="text" class="col input-text input-text--grey" placeholder="E-mail" name="email">	
+				</div>
+				<textarea name="comment" placeholder="Опишите дополнительно то, что будет важно при обсуждении вашего проекта" id="comment" rows="5" class="input-text input-text--grey input-textarea"></textarea>
+
+				<button type="submit" class="button button--blue popup__button">Отправить</button>
+			</form>
+
+			
+		</div>
+		</div>
+		<header class="header" id="header">
 			<div class="container pillbox">
 				<h2 class="heading heading--white heading--logo">
 					Under construction
 				</h2>
-				<div class="pillbox">
-					<a class="text text--white link" href="#">Портфолио</a>
-					<a class="text text--white link" href="#">О студии</a>
-					<a class="text text--white link" href="#">Стоимость</a>
-					<a class="button button--14px" href="#">Заказать</a>
-				</div>
+				<ul class="pillbox">
+					<a data-menuanchor="portfolio" class="text text--white link" href="#portfolio">Портфолио</a>
+					<a data-menuanchor="about-us" class="text text--white link" href="#about-us">О студии</a>
+					<a data-menuanchor="prices" class="text text--white link" href="#prices">Стоимость</a>
+					<a class="button button--14px" href="#" id="request" onclick="showPopup();">Заказать</a>
+				</ul>
 			</div>
 		</header>
 		<main>
@@ -102,7 +138,7 @@
 			<div id="fullpage">
 				<section class="section">
 					<div class="justifier">
-						<a class="block block--blue" href="#" style="width: 66%;">
+						<a class="block block--blue" href="#portfolio" style="width: 66%;">
 							<h2 class="heading heading--white heading--logo">
 								Under construction
 							</h2>
@@ -120,7 +156,7 @@
 							</footer>
 						</a>
 						<div style="width: 34%; height: 100%;">
-							<a class="block block--small block--yellow" href="#">
+							<a class="block block--small block--yellow" href="#about-us">
 								<div class="block__gradient" aria-hidden="true"></div>
 								<div class="block__picture-container">
 									<img class="block__picture" src="./desktop/img/2.png" width="320" height="231" alt="About us">
@@ -134,7 +170,7 @@
 									</p>
 								</footer>
 							</a>
-							<a class="block block--small block--silver" href="#">
+							<a class="block block--small block--silver" href="#prices">
 								<div class="block__gradient" aria-hidden="true"></div>
 								<div class="block__picture-container">
 									<img class="block__picture" src="./desktop/img/3.png" width="297" height="205" alt="Pricing">
@@ -258,48 +294,42 @@
 						<tr class="table__tr">
 							<th class="table__th table__th--wide"></th>
 							<th class="table__th table__th--lined">Landing</th>
-							<th class="table__th table__th--lined">Магазин</th>
-							<th class="table__th table__th--lined">Портал</th>
-							<th class="table__th table__th--lined">Приложение</th>
+							<th class="table__th table__th--lined">Интернет-магазин</th>
+							<th class="table__th table__th--lined">Корпоративный сайт</th>
 						</tr>
 						<tr class="table__tr table__tr--tall">
 							<td class="table__td table__td--wide"></td>
-							<td class="table__td table__td--lined">Анализ рынка и проработка УТП</td>
-							<td class="table__td"></td>
-							<td class="table__td"></td>
-							<td class="table__td"></td>
+							<td class="table__td table__td--lined">Анализ рынка. Формулировка целей и УТП страницы</td>
+							<td class="table__td">Проработка семантического ядра и внутренней структуры магазина</td>
+							<td class="table__td">Разработка индивидуального проекта сайта</td>
 						</tr>
 						<tr class="table__tr table__tr--tall">
 							<td class="table__td table__td--wide"></td>
-							<td class="table__td table__td--lined">Уникальный дизайн</td>
-							<td class="table__td">Очень красивый дизайн</td>
-							<td class="table__td"></td>
-							<td class="table__td"></td>
+							<td class="table__td table__td--lined">Современный дизайн</td>
+							<td class="table__td">Оптимизация внешнего вида</td>
+							<td class="table__td">Прорисовка сложных интерфейсов</td>
 						</tr>
 						<tr class="table__tr table__tr--tall">
 							<td class="table__td table__td--wide"></td>
-							<td class="table__td">Понятный, цепляющий текст</td>
-							<td class="table__td"></td>
-							<td class="table__td"></td>
-							<td class="table__td"></td>
+							<td class="table__td">Понятные, цепляющие тексты</td>
+							<td class="table__td">Подключение функциональных модулей</td>
+							<td class="table__td">Интегрирование сайта в экосистему компании</td>
 						</tr>
 						<tr class="table__tr">
 							<td class="table__td table__td--wide"></td>
 							<td class="table__td table__td--nowrap">1 месяц</td>
 							<td class="table__td table__td--nowrap">2,5 месяца</td>
-							<td class="table__td table__td--nowrap">От 2 месяцев</td>
-							<td class="table__td table__td--nowrap">2-3 недели</td>
+							<td class="table__td table__td--nowrap">от 2 месяцев</td>
 						</tr>
 						<tr class="table__tr">
-							<td class="table__td table__td--dark table__td--borderless table__td--wide"></td>
-							<td class="table__td table__td--borderless" colspan="4">Адаптивная верстка для планшетов и мобильных</td>
+							<td class="table__td table__td--borderless table__td--wide"></td>
+							<td class="table__td table__td--borderless" colspan="3">Адаптивная верстка для планшетов и мобильных</td>
 						</tr>
 						<tr class="table__tr">
 							<td class="table__td table__td--wide table__td--nowrap">Стоимость от:</td>
 							<td class="table__td table__td--lined table__td--nowrap table__td--big">30 000 р.</td>
 							<td class="table__td table__td--lined table__td--nowrap table__td--big">100 000 р.</td>
-							<td class="table__td table__td--lined table__td--nowrap table__td--big">120 000 р.</td>
-							<td class="table__td table__td--lined table__td--nowrap table__td--big">30 000 р.</td>
+							<td class="table__td table__td--lined table__td--nowrap table__td--big">150 000 р.</td>
 						</tr>
 					</table>
 					<div class="copyright">

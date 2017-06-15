@@ -2,6 +2,7 @@
 
 //var colors = ['#20ca8c', '#6d4c41', '#fd9444', '#ffb300', '#13aad1', '#b0bec5'];
 var colors = ['#20ca8c', '#6d4c41', '#fd9444', '#b0bec5', '#13aad1'];
+var anchors = ['','portfolio','portfolio','portfolio', 'about-us', 'prices'];
 $(document).ready(function() {
     // initialise slider
     var mySwiper = new Swiper ('#info', {
@@ -38,9 +39,17 @@ $(document).ready(function() {
         anchors:['','portfolio','','', 'about-us', 'prices'],
         lockAnchors: false,
         animateAnchor: true,
-        menu: '#header',
+        
         onLeave: function (index, nextIndex, direction) {
+            
             document.getElementById("background").style.backgroundColor = colors[nextIndex - 2];
+
+            // active anchors
+            $('.pillbox .link').removeClass('active');
+
+            if (anchors[nextIndex-1]) {
+                $('.pillbox .link[data-anchor="'+anchors[nextIndex-1]+'"]').addClass('active');
+            }
 
             // scroll `info` according to the showcase slide where we are going
             if (nextIndex >= info_begin && nextIndex <= info_end) {
