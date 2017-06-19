@@ -232,11 +232,13 @@
 
 
 .popup {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
 
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
+  top: -100%;
   margin: 0 auto;
   padding: 60px;
 
@@ -245,7 +247,8 @@
   box-shadow: 0 2px 4px rgba(120, 120, 120, 0.5);
 
   z-index: 101;
-  
+  transition: all 0.5s;
+
   &--request {
     width: 900px;
   }
@@ -269,7 +272,11 @@
   }
 
   &__bg {
-    display: none;
+    display: flex;
+
+    visibility: hidden;
+    opacity: 0;
+
     top: 0;
     position: fixed;
     height: 100%;
@@ -291,6 +298,15 @@
     background-size: cover;
     cursor: pointer;
   }
+
+  &--active {
+    position: fixed;
+    visibility: visible;
+    opacity: 1;
+    top: auto;
+  }
+
+
 }
 
 

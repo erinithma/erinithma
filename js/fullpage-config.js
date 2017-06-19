@@ -104,21 +104,17 @@ $(document).ready(function() {
     var header_end = $('.section').index($('*[data-header="end"]')) + 1;
     
 
-    //$('#request').click(function(e){
-    
-
     $('.popup__button').click(function(e){
-        $('.popup').hide();
-        $('.popup__bg').hide();
+        $('.popup__bg').toggleClass('popup--active');
+        $('.popup').toggleClass('popup--active');
         return false;
     });
-
-    console.log('initialized');
-
 });
+
 function showPopup() {
-    console.log('request clicked');
     $('.popup').show();
-    $('.popup__bg').show();
-    $('.popup__bg').css('display','flex');
+    //$('.popup__bg').show();
+    //$('.popup__bg').css('display','flex');
+    $('.popup__bg').toggleClass('popup--active');
+    $('.popup').toggleClass('popup--active');
 }

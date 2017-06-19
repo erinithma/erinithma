@@ -7,19 +7,40 @@
   border: 1px solid @color-blue;
   border-radius: 6px;
   box-sizing: border-box;
-  line-height: 1.25;
-
+  
   &:hover,
   &:active,
   &:focus {
     outline: none;
   }
 
+
   &--grey {
     border:none;
     background-color: #ebebeb;
     color: #828282;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__placeholder {
+    position: absolute;
+    left: 15px;
+    z-index: 1;
+    transition: all .3s ease;
+    top: 9px;
+    color: #B3B3B3;
+  }
+  
+
+  &:active + &__placeholder,
+  &:focus + &__placeholder {
+    top: -17px;
+    left: 4px;
+    font-size: 12px;
   }
 }
 
