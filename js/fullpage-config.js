@@ -97,6 +97,8 @@ $(document).ready(function() {
         }
     });
 
+    
+    
     var header = $('.header');
     $('.header').remove();
     $('*[data-header="begin"]').append(header);
