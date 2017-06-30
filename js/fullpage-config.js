@@ -39,9 +39,10 @@ $(document).ready(function() {
         anchors:['','portfolio','','', 'about-us', 'prices'],
         lockAnchors: false,
         animateAnchor: true,
+        fixedElements: '.header',
+        bigSectionsDestination: 'top',
         
         onLeave: function (index, nextIndex, direction) {
-            
             document.getElementById("background").style.backgroundColor = colors[nextIndex - 2];
 
             // active anchors
@@ -97,8 +98,6 @@ $(document).ready(function() {
         }
     });
 
-    
-    
     var header = $('.header');
     $('.header').remove();
     $('*[data-header="begin"]').append(header);
