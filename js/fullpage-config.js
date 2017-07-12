@@ -110,6 +110,13 @@ $(document).ready(function() {
         $('.popup').toggleClass('popup--active');
         return false;
     });
+
+    $('.input-text').blur(function() {
+        if ($(this).val())
+          $(this).addClass('used');
+        else
+          $(this).removeClass('used');
+      });
 });
 
 function showPopup() {

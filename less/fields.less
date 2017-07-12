@@ -4,9 +4,12 @@
   display: block;
   width: 100%;
   padding: 9px 16px;
-  border: 1px solid @color-blue;
-  border-radius: 6px;
   box-sizing: border-box;
+  z-index: 2;
+  position: relative;
+  border:none;
+  background-color: transparent;
+  color: #828282;
   
   &:hover,
   &:active,
@@ -15,15 +18,18 @@
   }
 
 
-  &--grey {
-    border:none;
-    background-color: #ebebeb;
-    color: #828282;
-    margin-bottom: 25px;
-  }
-
   &__container {
     position: relative;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: @color-blue;
+    border-radius: 6px;
+    &--grey {
+      border-color: transparent;
+      background-color: #ebebeb;
+      margin-bottom: 25px;
+    }
   }
 
   &__placeholder {
@@ -35,7 +41,7 @@
     color: #B3B3B3;
   }
   
-
+  &.used + &__placeholder,
   &:active + &__placeholder,
   &:focus + &__placeholder {
     top: -17px;
