@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css?family=Exo+2:400,500,700,900&amp;subset=cyrillic" rel="stylesheet">
-		<title>Erinithma</title>
+		<title>Under Construction - Создаем классные, адаптивные и функциональные сайты</title>
 
 		<link rel="stylesheet" href="./desktop/libs.css">
-		<link rel="stylesheet" href="./desktop/bundle.css">
+    <link rel="stylesheet" href="./desktop/bundle.css">
 
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -15,50 +15,55 @@
 	<body>
 		<div class="popup__bg">
 		<div class="popup popup--request">
-			<form action="/mailer.php" method="POST">
-				<h2 class="popup__title">Оставьте заявку</h2>
-				<p class="text popup__text">Мы свяжемся с вами, чтобы узнать детали вашего проекта</p>
-				
-				<div class="check-group">
-					<div class="check-group__check">
-						<input name="landing" id="landing" type="checkbox">
-						<label for="landing">Landing Page</label>
-					</div>
-					<div class="check-group__check">
-						<input name="store" id="store" type="checkbox">
-						<label for="store">Интернет-магазин</label>
-					</div>
-					<div class="check-group__check">
-						<input name="corp" id="corp" type="checkbox">
-						<label for="corp">Корпоративный сайт</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-text__container col">
-						<input type="text" class="input-text input-text--grey" name="name">
-						<span class="input-text__placeholder">Ваше имя</span>
-					</div>
-					<div class="input-text__container col">
-						<input type="text" class="input-text input-text--grey" placeholder="" name="phone">
-						<span class="input-text__placeholder">Телефон</span>
-					</div>
+			<form id="order" action="/mailer.php" method="POST" class="form">
+				<div class="form__header"></div>
+				<div class="form__inner active">
+					<h2 class="popup__title">Оставьте заявку</h2>
+					<p class="text popup__text">Мы свяжемся с вами, чтобы узнать детали вашего проекта</p>
 					
-				</div>
-				<div class="row">
-					<div class="input-text__container col">
-						<input type="text" class="input-text input-text--grey" name="website">
-						<span class="input-text__placeholder">Ваш сайт (если есть)</span>
+					<div class="check-group">
+						<div class="check-group__check">
+							<input name="landing" id="landing" type="checkbox">
+							<label for="landing">Landing Page</label>
+						</div>
+						<div class="check-group__check">
+							<input name="store" id="store" type="checkbox">
+							<label for="store">Интернет-магазин</label>
+						</div>
+						<div class="check-group__check">
+							<input name="corp" id="corp" type="checkbox">
+							<label for="corp">Корпоративный сайт</label>
+						</div>
 					</div>
-					<div class="input-text__container col">
-						<input type="text" class="input-text input-text--grey" name="email">
-						<span class="input-text__placeholder">E-mail</span>
+					<div class="row">
+						<div class="input-text__container input-text__container--grey col">
+							<input type="text" class="input-text" name="name" required>
+							<span class="input-text__placeholder">Ваше имя</span>
+						</div>
+						<div class="input-text__container input-text__container--grey col">
+							<input type="text" class="input-text" name="phone" required>
+							<span class="input-text__placeholder">Телефон</span>
+						</div>
+						
 					</div>
+					<div class="row">
+						<div class="input-text__container input-text__container--grey col">
+							<input type="text" class="input-text" name="website">
+							<span class="input-text__placeholder">Ваш сайт (если есть)</span>
+						</div>
+						<div class="input-text__container input-text__container--grey col">
+							<input type="text" class="input-text" name="email">
+							<span class="input-text__placeholder">E-mail</span>
+						</div>
+					</div>
+					<div class="input-text__container input-text__container--grey">
+						<textarea name="comment" id="comment" class="input-text input-textarea"></textarea>
+						<span class="input-text__placeholder">Опишите дополнительно то, что будет важно при обсуждении вашего проекта</span>
+					</div>
+					<input type="hidden" name="action" value="order">
+					<input type="hidden" name="e-mail" value="">
+					<button type="submit" id="submit" class="button button--blue popup__button">Отправить</button>
 				</div>
-				<div class="input-text__container">
-					<textarea name="comment" id="comment" class="input-text input-text--grey input-textarea"></textarea>
-					<span class="input-text__placeholder">Опишите дополнительно то, что будет важно при обсуждении вашего проекта</span>
-				</div>
-				<button type="submit" class="button button--blue popup__button">Отправить</button>
 			</form>
 			<div class="popup__close popup__button"></div>
 		</div>
@@ -116,7 +121,7 @@
 							<p class="text">
 								Сплетение графики, текста, анимации и музыи для наилучшей передачи атмосферы квеста и пробуждения желания записаться на игру.
 							</p>
-							<a class="button button--big button--brown" href="#">
+							<a class="button button--big button--brown" href="http://de-montecristo.ru/quest/" target="_blank" rel="nofollow">
 								Перейти на сайт
 							</a>
 							<p class="text text--small text--silver">
@@ -221,68 +226,78 @@
 					<article class="accordion__strip accordion__strip--blue">
 						<div class="accordion__inner">
 							<div class="accordion__picture-container">
-								<img class="picture accordion__picture" src="./desktop/img/accordion/phy.png" width="84" height="84" alt="" aria-hidden="true">
+								<img class="picture accordion__picture" src="./desktop/img/accordion/phy.svg" width="84" height="84" alt="" aria-hidden="true">
 								<h3 class="heading heading--white heading--light">Философия</h3>
 							</div>
 							<div class="accordion__text-container">
-								<p class="text text--white accordion__text">
-									Разрабываем толковые сайты для малых и средних компаний. Приоритеты в работы: функциональность, удобство для посетителей, и конечно бизнес-цел заказачика.
-								</p>
+								<div class="accordion__text">
+								<p class="text text--white">
+									Under Construction переводится как «В процессе разработки». Наше правило — никогда не останавливаться в развитии своего мастерства, выдавать максимум в каждом проекте.</p><p class="text text--white"> Никакого массового производства. Каждый сайт разрабатывается индивидуально для вас, вашей компании, и ваших посетителей.</p>
+								</div>
 							</div>
 						</div>
 					</article>
 					<article class="accordion__strip accordion__strip--yellow">
 						<div class="accordion__inner">
 							<div class="accordion__picture-container">
-								<img class="picture accordion__picture" src="./desktop/img/accordion/web.png" width="84" height="84" alt="" aria-hidden="true">
+								<img class="picture accordion__picture" src="./desktop/img/accordion/web.svg" width="84" height="84" alt="" aria-hidden="true">
 								<h3 class="heading heading--white heading--light">WEB-разработка</h3>
 							</div>
 							<div class="accordion__text-container">
-								<p class="text text--white accordion__text">
-									Разрабываем толковые сайты для малых и средних компаний. Приоритеты в работы: функциональность, удобство для посетителей, и конечно бизнес-цел заказачика.
-								</p>
+								<div class="accordion__text">
+										<p class="text text--white ">
+											Мы опытные специалисты в создании легких, современных сайтов: интернет-магазинов, новостных порталов, нестандартных корпоративных решений и landing page. 
+										</p><p class="text text--white ">Анализируя рынок и предпочтений вашей целевой аудитории, мы подбираем наиболее эффективные решения на всех этапах, от структуры сайта до наполнения контентом.</p>
+								</div>
 							</div>
 						</div>
 					</article>
 					<article class="accordion__strip accordion__strip--orange">
 						<div class="accordion__inner">
 							<div class="accordion__picture-container">
-								<img class="picture accordion__picture" src="./desktop/img/accordion/skills.png" width="84" height="84" alt="" aria-hidden="true">
+								<img class="picture accordion__picture" src="./desktop/img/accordion/skills.svg" width="84" height="84" alt="" aria-hidden="true">
 								<h3 class="heading heading--white heading--light">Навыки</h3>
 							</div>
 							<div class="accordion__text-container">
-								<p class="text text--white accordion__text">
-									Разрабываем толковые сайты для малых и средних компаний. Приоритеты в работы: функциональность, удобство для посетителей, и конечно бизнес-цел заказачика.
-								</p>
+								
+								<div class="accordion__text">
+									<p class="text text--white">
+										Основной стек технологий и инструментов: 
+									</p>
+									<ul class="text text--white">
+										<li>HTML5, CSS3, JavaScript</li>
+										<li>БЭМ (в редакции Николаса Галлахера)</li>
+										<li>Gulp, LESS, SASS, PostCSS / Autoprefixer</li>
+										<li>WordPress, OpenCart, Yii2</li>
+										<li>Git, Trello, Slack</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</article>
 					<article class="accordion__strip  accordion__strip--green">
 						<div class="accordion__inner">
 							<div class="accordion__picture-container">
-								<img class="picture accordion__picture" src="./desktop/img/accordion/contacts.png" width="84" height="84" alt="" aria-hidden="true">
+								<img class="picture accordion__picture" src="./desktop/img/accordion/contacts.svg" width="84" height="84" alt="" aria-hidden="true">
 								<h3 class="heading heading--white heading--light">Контакты</h3>
 							</div>
 							<div class="accordion__text-container">
-								<p class="text text--white accordion__text">
-									Разрабываем толковые сайты для малых и средних компаний. Приоритеты в работы: функциональность, удобство для посетителей, и конечно бизнес-цел заказачика.
-								</p>
+								<div class="accordion__text">
+										<p class="text text--white">
+											Санкт-Петербург, Измайловский пр., 29<br>
+											Телефон: <a class="link" href="tel:+79213794630">+7 (921) 379-46-30</a><br>
+											E-mail: <a class="link" href="mailto:office@undercons.ru">office@undercons.ru</a>
+										</p>
+										<p class="text text--white">
+											Telegram: <a class="link" href="tg://resolve?domain=JohnHordesky">@JohnHordesky</a><br>
+											Facebook: <a class="link" href="https://www.facebook.com/honest.square">https://www.facebook.com/honest.square</a><br> 
+											VK: <a class="link" href="https://vk.com/under_conctruction">https://vk.com/under_conctruction</a><br>
+										</p>	
+								</div>
 							</div>
 						</div>
 					</article>
-					<article class="accordion__strip  accordion__strip--brown">
-						<div class="accordion__inner">
-							<div class="accordion__picture-container">
-								<img class="picture accordion__picture" src="./desktop/img/accordion/awards.png" width="84" height="84" alt="" aria-hidden="true">
-								<h3 class="heading heading--white heading--light">Сертификаты</h3>
-							</div>
-							<div class="accordion__text-container">
-								<p class="text text--white accordion__text">
-									Разрабываем толковые сайты для малых и средних компаний. Приоритеты в работы: функциональность, удобство для посетителей, и конечно бизнес-цел заказачика.
-								</p>
-							</div>
-						</div>
-					</article>
+
 					</div>
 				</section>
 				<section data-footer="here" aria-hidden="true"></section>
@@ -297,7 +312,7 @@
 							Заказать разработку
 						</h2>
 						<p class="text">
-							Чтобы начать работу, оставьте контакт на любой удобный вам способ связи: телефон, e-mail или facebook
+							Чтобы начать работу, оставьте контакт на удобный вам способ связи: телефон или e-mail. Мы ответим в течение часа.
 						</p>
 						<form class="feedback__form">
 							<div class="input-text__container">
@@ -318,25 +333,25 @@
 						<tr class="table__tr table__tr--tall">
 							<td class="table__td table__td--wide"></td>
 							<td class="table__td table__td--lined">Анализ рынка. Формулировка целей и УТП страницы</td>
-							<td class="table__td">Проработка семантического ядра и внутренней структуры магазина</td>
+							<td class="table__td">Проработка семантического ядра и внутренней структуры</td>
 							<td class="table__td">Разработка индивидуального проекта сайта</td>
 						</tr>
 						<tr class="table__tr table__tr--tall">
 							<td class="table__td table__td--wide"></td>
 							<td class="table__td table__td--lined">Современный дизайн</td>
-							<td class="table__td">Оптимизация внешнего вида</td>
-							<td class="table__td">Прорисовка сложных интерфейсов</td>
+							<td class="table__td">Актуальные функции и модули</td>
+							<td class="table__td">Проектирование интерфейсов</td>
 						</tr>
 						<tr class="table__tr table__tr--tall">
 							<td class="table__td table__td--wide"></td>
-							<td class="table__td">Понятные, цепляющие тексты</td>
-							<td class="table__td">Подключение функциональных модулей</td>
+							<td class="table__td">Понятные, полезные и цепляющие тексты</td>
+							<td class="table__td">Удобная админ. панель для управления заказами</td>
 							<td class="table__td">Интегрирование сайта в экосистему компании</td>
 						</tr>
 						<tr class="table__tr">
 							<td class="table__td table__td--wide"></td>
-							<td class="table__td table__td--nowrap">1 месяц</td>
-							<td class="table__td table__td--nowrap">2,5 месяца</td>
+							<td class="table__td table__td--nowrap">3-4 недели</td>
+							<td class="table__td table__td--nowrap">1,5-2 месяца</td>
 							<td class="table__td table__td--nowrap">от 2 месяцев</td>
 						</tr>
 						<tr class="table__tr">
@@ -345,13 +360,13 @@
 						</tr>
 						<tr class="table__tr">
 							<td class="table__td table__td--wide table__td--nowrap">Стоимость от:</td>
-							<td class="table__td table__td--lined table__td--nowrap table__td--big">30 000 р.</td>
-							<td class="table__td table__td--lined table__td--nowrap table__td--big">100 000 р.</td>
-							<td class="table__td table__td--lined table__td--nowrap table__td--big">150 000 р.</td>
+							<td class="table__td table__td--lined table__td--nowrap table__td--big">20 000 р.</td>
+							<td class="table__td table__td--lined table__td--nowrap table__td--big">70 000 р.</td>
+							<td class="table__td table__td--lined table__td--nowrap table__td--big">90 000 р.</td>
 						</tr>
 					</table>
 					<div class="copyright">
-						justgo@under-const.ru. 2017
+						<a class="link" href="mailto:office@undercons.ru">office@underc.ru</a> 2017
 					</div>
 				</div>
 			</section>			

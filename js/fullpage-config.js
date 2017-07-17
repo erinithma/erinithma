@@ -105,24 +105,97 @@ $(document).ready(function() {
     var header_end = $('.section').index($('*[data-header="end"]')) + 1;
     
 
-    $('.popup__button').click(function(e){
+    $('.popup__close').click(function(e){
         $('.popup__bg').toggleClass('popup--active');
         $('.popup').toggleClass('popup--active');
         return false;
     });
 
+    $('.input-text').each(function(){
+        if ($(this).val())
+            $(this).addClass('used');
+    });
+
     $('.input-text').blur(function() {
         if ($(this).val())
-          $(this).addClass('used');
+            $(this).addClass('used');
         else
-          $(this).removeClass('used');
-      });
+            $(this).removeClass('used');
+    });
+
+    
+    
+
+    $('#submit').click(function(e){
+        console.log('vefore submit');
+        e.preventDefault();
+        if (validateInput()) {
+            console.log('validated');
+            $.ajax({
+                method: 'POST',
+                url: '/mailer.php',
+                data: $('#order').serialize(),
+                dataType: 'json',
+                success: function (json) {
+                    console.log(json);
+                    if (json['status']) {
+                        console.log('success');
+                        $('.form__inner').removeClass('active');
+                        $('.form__header').addClass('active');
+                        $('.form__header').append(json['success']);
+
+                        window.setTimeout(function() {
+                            $('.popup__close').trigger('click');
+                            $('.form__inner').addClass('active');
+                            $('.form__header').removeClass('active');
+                            $('.form__header').html('');
+                            $('input-text').removeClass('has-error');
+                            $('.error').remove();
+                            $('.input-text').each(function(){
+                                $(this).val('');
+                            });
+                        }, 2500);
+                    } else {
+                        console.log('error');
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                }
+            });
+        } else {
+            console.log('ЕГОГ');
+        }
+    });
+
+    function validateInput() {
+        console.log('validateInput');
+        $('input-text').removeClass('has-error');
+        $('.error').remove();
+        var result=true;
+        var name = $('input[name="name"]'),
+            phone = $('input[name="phone"]');
+
+        if (!name.val()) {
+            name.addClass('has-error');
+            name.after('<p class="error">Введите ваше Имя</p>');
+            result=false;
+        }
+        if (!phone.val()) {
+            phone.addClass('has-error');
+            phone.after('<p class="error">Введите ваш номер телефона</p>');
+            result=false;
+        }
+
+        return result;
+    }
+
+    
 });
+
 
 function showPopup() {
     $('.popup').show();
-    //$('.popup__bg').show();
-    //$('.popup__bg').css('display','flex');
     $('.popup__bg').toggleClass('popup--active');
     $('.popup').toggleClass('popup--active');
 }
